@@ -9,6 +9,7 @@ ENV LANG="en_US.UTF-8" \
 
 RUN apk update && apk upgrade && \
     apk add mariadb mariadb-client && \
-#    /init/setdatadir.sh && \
     rm -rf /var/cache/apk/*
+
+VOLUME /data
 
