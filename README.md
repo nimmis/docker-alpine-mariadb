@@ -1,13 +1,13 @@
 ## MariaDB 10 server on Alpine
 
-[![Docker Hub; nimmis/alpine-mariadb](https://img.shields.io/badge/dockerhub-nimmis%2Falpine-mariadb-green.svg)](https://registry.hub.docker.com/u/nimmis/alpine-mariadb)
+[![Docker Hub; nimmis/alpine-mariadb](https://images.microbadger.com/badges/image/nimmis/alpine-mariadb.svg)](https://registry.hub.docker.com/u/nimmis/alpine-mariadb)
 
 ## What is MariaDB?
 
 MariaDB is a community-developed fork of the MySQL relational database management system intended to remain free under the GNU GPL.
 
 
-Container based on [![Docker Hub; nimmis/alpine-micro](https://img.shields.io/badge/dockerhub-nimmis%2Falpine-micro-green.svg)](https://registry.hub.docker.com/u/nimmis/alpine-micro), a minimal os (8.5 Mb)  with working init process and syslog. For more information on how to set upp services, please read the dockumentation for [nimmis/alpine-micro](https://registry.hub.docker.com/u/nimmis/alpine-micro). This container is about half the size of the official mariadb docker container.
+Container based on **nimmis/alpine-micro** [![Docker Hub; nimmis/alpine-micro](https://images.microbadger.com/badges/image/nimmis/alpine-micro.svg)](https://registry.hub.docker.com/u/nimmis/alpine-micro), a minimal os (8.5 Mb)  with working init process and syslog. For more information on how to set upp services, please read the dockumentation for [nimmis/alpine-micro](https://registry.hub.docker.com/u/nimmis/alpine-micro). This container is about half the size of the official mariadb docker container.
 
 
 ## Starting the container
@@ -69,3 +69,19 @@ The apssword for the user defined by MARIADB_USER
 
 
 ### MARIADB_PASSWORD
+
+## Volumes
+
+The /data volume is defined containing
+
+### /data/conf
+
+Contains the configuration of mariadb (**my.cnf**)
+
+### /data/db
+
+Contains the database files
+
+### /data/logs
+
+Contains logs from mariadb
