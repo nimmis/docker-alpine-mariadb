@@ -1,5 +1,7 @@
 FROM nimmis/alpine-micro
 
+MAINTAINER nimmis <kjell.havneskold@gmail.com>
+
 ARG IMAGE_NAME
 ARG DOCKER_REPO
 ARG BUILD_DATE
