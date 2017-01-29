@@ -25,7 +25,7 @@ RUN apk update && apk upgrade && \
 
     # Make info file about this build
     mkdir -p /etc/BUILDS/ && \
-    printf "Build of %s, date: %s\n" $IMAGE_NAME  `date -u +"%Y-%m-%dT%H:%M:%SZ"` > /etc/BUILDS/dd$DOCKER_REPO && \
+    printf "Build of %s, date: %s\n" $IMAGE_NAME  `date -u +"%Y-%m-%dT%H:%M:%SZ"` > /etc/BUILDS/$DOCKER_REPO && \
 
     # add mariadb server and client
     apk add mariadb mariadb-client && \
