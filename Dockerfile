@@ -1,5 +1,9 @@
 FROM nimmis/alpine-micro
 
+ARG IMAGE_NAME
+ARG DOCKER_REPO
+
+
 # fix labels
 LABEL maintainer="nimmis <kjell.havneskold@gmail.com>" \
       org.label-schema.docker.dockerfile="/Dockerfile" \
@@ -17,8 +21,7 @@ ENV LANG="en_US.UTF-8" \
 RUN apk update && apk upgrade && \
 
     # Make info file about this build
-    mkdir -p /etc/BUILDS/ && \
-    printf "Build of nimmis/alpine-mariadb, date: %s\n"  `date -u +"%Y-%m-%dT%H:%M:%SZ"` > /etc/BUILDS/alpine-mariadb && \
+    printf "Build of %s, date: %s\n" $IMAGE_NAME  `date -u +"%Y-%m-%dT%H:%M:%SZ"` > /etc/BUILDS/$DOCKER_REPO && \
 
     # add mariadb server and client
     apk add mariadb mariadb-client && \
